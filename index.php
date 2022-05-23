@@ -1,4 +1,5 @@
 <?php
+    // inserire qui gli array (se necessario)
 ## Snack 1
 // Creiamo un array contenente le partite di basket di un’ipotetica tappa del calendario. Ogni array avrà una squadra di casa e una squadra ospite, punti fatti dalla squadra di casa e punti fatti dalla squadra ospite. Stampiamo a schermo tutte le partite con questo schema.
 // Olimpia Milano - Cantù | 55-60
@@ -86,20 +87,92 @@ $giornata25 = [
     ],
     
 ];
+$nome = $_GET['nome'];
+$eMail = $_GET['email'];
+$eta= $_GET['eta'];
+if(empty($nome) && empty($eMail) && empty($eta)){
+    $messaggio= 'Inserisci Credenziali';
+}elseif (strlen($nome) > 3  && strpos($eMail,'@') !== false && strpos($eMail,'.') !== false && is_numeric($eta)){
+    $messaggio='Accesso Consentito!';
+}else{
+    $messaggio='Accesso Negato!';
+};
+$posts = [
 
-
+    '10/01/2019' => [
+        [
+            'title' => 'Post 1',
+            'author' => 'Michele Papagni',
+            'text' => 'Testo post 1'
+        ],
+        [
+            'title' => 'Post 2',
+            'author' => 'Michele Papagni',
+            'text' => 'Testo post 2'
+        ],
+    ],
+    '10/02/2019' => [
+        [
+            'title' => 'Post 3',
+            'author' => 'Michele Papagni',
+            'text' => 'Testo post 3'
+        ]
+    ],
+    '15/05/2019' => [
+        [
+            'title' => 'Post 4',
+            'author' => 'Michele Papagni',
+            'text' => 'Testo post 4'
+        ],
+        [
+            'title' => 'Post 5',
+            'author' => 'Michele Papagni',
+            'text' => 'Testo post 5'
+        ],
+        [
+            'title' => 'Post 6',
+            'author' => 'Michele Papagni',
+            'text' => 'Testo post 6'
+        ]
+    ],
+];
+var_dump($posts)
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Snack di gruppo</title>
+
+    <style>
+        /* stile per lo snack 6 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .grey, .green {
+            padding: 40px;
+            float: left;
+            width: 50%;
+        }
+        .grey {
+            background: grey;
+        }
+        .green {
+            background: green;
+        }
+        /* se si vuole aggiungere altro css è preferibile creare un file apparte */
+    </style>
+    
 </head>
 <body>
-    <ul>
+    <section id="snack1">
+        
+        <h1> Snack 1 </h1>
+        <ul>
         <?php for($i = 0; $i < count($giornata25); $i++){ ?>
         <li> 
             <span>
@@ -120,5 +193,59 @@ $giornata25 = [
         </li>
         <?php } ?>
     </ul>
+    </section>
+    <section id="snack2">
+        
+        <h1> Snack 2 </h1>
+        <p><?php echo $messaggio ?></p>
+    </section>
+    <section id="snack3">
+        
+        <h1> Snack 3 </h1>
+        <!-- inserire qui il codice dello snack (aprire i tag php se necessario) -->
+    </section>
+    <section id="snack4">
+        
+        <h1> Snack 4 </h1>
+        <!-- inserire qui il codice dello snack (aprire i tag php se necessario) -->
+    </section>
+    <section id="snack5">
+        
+        <h1> Snack 5 </h1>
+        <!-- inserire qui il codice dello snack (aprire i tag php se necessario) -->
+    </section>
+    <section id="snack6">
+        
+        <h1> Snack 6 </h1>
+        <!-- inserire qui il codice dello snack (aprire i tag php se necessario) -->
+    </section>
+    <section id="snack7">
+        
+        <h1> Snack 7 </h1>
+        <!-- inserire qui il codice dello snack (aprire i tag php se necessario) -->
+    </section>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Invia messaggio classe59_general
+
+
+
+
+
+
+
+
