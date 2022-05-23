@@ -85,7 +85,6 @@ $giornata25 = [
             "puntiOspite" => rand(1,100),
         ],
     ],
-    
 ];
 $nome = $_GET['nome'];
 $eMail = $_GET['email'];
@@ -143,6 +142,34 @@ while(count($numberArray) < 15){
         $numberArray[] = $number;
     }
 }
+ // Prendere un paragrafo abbastanza lungo, contenente diverse frasi. Prendere il paragrafo e suddividerlo in tanti paragrafi. Ogni punto un nuovo paragrafo.
+ $paragrafo='Lorem ipsum dolor sit amet ,consectetur adipisicing elit. Dicta ea, itaque placeat eveniet excepturi, qui error mollitia harum, quas eos voluptatum totam animi, iure nisi, eaque quis possimus, amet minima.';
+ $explodedParagraph=explode(',', $paragrafo);
+
+//  Utilizzare questo array: https://pastebin.com/CkX3680A. Stampiamo il nostro array mettendo gli insegnanti in un rettangolo grigio e i PM in un rettangolo verde.
+$db = [
+    'teachers' => [
+        [
+            'name' => 'Michele',
+            'lastname' => 'Papagni'
+        ],
+        [
+            'name' => 'Fabio',
+            'lastname' => 'Forghieri'
+        ]
+    ],
+    'pm' => [
+        [
+            'name' => 'Roberto',
+            'lastname' => 'Marazzini'
+        ],
+        [
+            'name' => 'Federico',
+            'lastname' => 'Pellegrini'
+        ]
+    ]
+];
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -151,6 +178,7 @@ while(count($numberArray) < 15){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Snack di gruppo</title>
+    <link rel="stylesheet" href="./css/style.css">
 
     <style>
         /* stile per lo snack 6 */
@@ -225,17 +253,31 @@ while(count($numberArray) < 15){
         
         <h1> Snack 4 </h1>
         <?php var_dump($numberArray) ?>
-        <!-- inserire qui il codice dello snack (aprire i tag php se necessario) -->
     </section>
     <section id="snack5">
         
         <h1> Snack 5 </h1>
-        <!-- inserire qui il codice dello snack (aprire i tag php se necessario) -->
+        <p><?php var_dump($explodedParagraph)?></p>
     </section>
     <section id="snack6">
         
         <h1> Snack 6 </h1>
-        <!-- inserire qui il codice dello snack (aprire i tag php se necessario) -->
+        <ul>
+            <?php foreach($db as $k => $v){?>
+                <?php echo $k?>
+                <li>
+                    <?php foreach($v as $value){?>
+                        <span class="<?php 
+                            if($k == 'teachers'){
+                                echo 'grey';
+                            }else{
+                                echo 'green';
+                            };
+                            ?>"><?php echo $value['name'], $value['lastname']?></span>
+                    <?php }?>
+                </li>
+            <?php } ?>
+        </ul>
     </section>
     <section id="snack7">
         
