@@ -202,7 +202,18 @@ var_dump($posts)
     <section id="snack3">
         
         <h1> Snack 3 </h1>
-        <!-- inserire qui il codice dello snack (aprire i tag php se necessario) -->
+        <ul>
+            <?php foreach($posts as $k => $v){?>
+                <?php echo $k?>
+                <li>
+                    <?php foreach($v as $value){?>
+                        <p><?php echo $value['title'];?></p>
+                        <p><?php echo $value['author'];?></p>
+                        <p><?php echo $value['text'];?></p>
+                    <?php }?>
+                </li>
+            <?php } ?>
+        </ul>
     </section>
     <section id="snack4">
         
@@ -226,26 +237,3 @@ var_dump($posts)
     </section>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Invia messaggio classe59_general
-
-
-
-
-
-
-
-
