@@ -136,7 +136,13 @@ $posts = [
         ]
     ],
 ];
-var_dump($posts)
+$numberArray=[];
+while(count($numberArray) < 15){
+    $number = rand(1,30);
+    if(!in_array($number,$numberArray)){
+        $numberArray[] = $number;
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -218,6 +224,7 @@ var_dump($posts)
     <section id="snack4">
         
         <h1> Snack 4 </h1>
+        <?php var_dump($numberArray) ?>
         <!-- inserire qui il codice dello snack (aprire i tag php se necessario) -->
     </section>
     <section id="snack5">
