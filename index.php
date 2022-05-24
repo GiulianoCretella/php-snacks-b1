@@ -6,84 +6,66 @@
 
 $giornata25 = [
     [
-        [
-            "squadraCasa" => "Universo Treviso",
-            "puntiCasa" => rand(1,100),
-        ],
-        [
-            "squadraOspite" => "Napoli",
-            "puntiOspite" => rand(1,100),
-        ],
+        "squadraCasa" => "Universo Treviso",
+        "puntiCasa" => rand(1,100),
+        "squadraOspite" => "Napoli",
+        "puntiOspite" => rand(1,100),
     ],
     [
-        [
-            "squadraCasa" => "Fortitudo Bologna",
-            "puntiCasa" => rand(1,100),
-        ],
-        [
-            "squadraOspite" => "Cremona",
-            "puntiOspite" => rand(1,100),
-        ],
+        
+        "squadraCasa" => "Fortitudo Bologna",
+        "puntiCasa" => rand(1,100),
+        "squadraOspite" => "Cremona",
+        "puntiOspite" => rand(1,100),
+        
     ],
     [
-        [
-            "squadraCasa" => "Brescia",
-            "puntiCasa" => rand(1,100),
-        ],
-        [
-            "squadraOspite" => "Trento",
-            "puntiOspite" => rand(1,100),
-        ],
+        
+        "squadraCasa" => "Brescia",
+        "puntiCasa" => rand(1,100),
+        "squadraOspite" => "Trento",
+        "puntiOspite" => rand(1,100),
+        
     ],
     [
-        [
-            "squadraCasa" => "Dinamo Sassari",
-            "puntiCasa" => rand(1,100),
-        ],
-        [
-            "squadraOspite" => "Olimpia Milano",
-            "puntiOspite" => rand(1,100),
-        ],
+        
+        "squadraCasa" => "Dinamo Sassari",
+        "puntiCasa" => rand(1,100),
+        "squadraOspite" => "Olimpia Milano",
+        "puntiOspite" => rand(1,100),
+        
     ],
     [
-        [
-            "squadraCasa" => "Derthona",
-            "puntiCasa" => rand(1,100),
-        ],
-        [
-            "squadraOspite" => "Pesaro",
-            "puntiOspite" => rand(1,100),
-        ],
+        
+        "squadraCasa" => "Derthona",
+        "puntiCasa" => rand(1,100),
+        "squadraOspite" => "Pesaro",
+        "puntiOspite" => rand(1,100),
+        
     ],
     [
-        [
-            "squadraCasa" => "Trieste",
-            "puntiCasa" => rand(1,100),
-        ],
-        [
-            "squadraOspite" => "Virtus Bologna",
-            "puntiOspite" => rand(1,100),
-        ],
+        
+        "squadraCasa" => "Trieste",
+        "puntiCasa" => rand(1,100),
+        "squadraOspite" => "Virtus Bologna",
+        "puntiOspite" => rand(1,100),
+        
     ],
     [
-        [
-            "squadraCasa" => "Brindisi",
-            "puntiCasa" => rand(1,100),
-        ],
-        [
-            "squadraOspite" => "Varese",
-            "puntiOspite" => rand(1,100),
-        ],
+        
+        "squadraCasa" => "Brindisi",
+        "puntiCasa" => rand(1,100),
+        "squadraOspite" => "Varese",
+        "puntiOspite" => rand(1,100),
+        
     ],
     [
-        [
-            "squadraCasa" => "Reggiana",
-            "puntiCasa" => rand(1,100),
-        ],
-        [
-            "squadraOspite" => "Venezia",
-            "puntiOspite" => rand(1,100),
-        ],
+        
+        "squadraCasa" => "Reggiana",
+        "puntiCasa" => rand(1,100),
+        "squadraOspite" => "Venezia",
+        "puntiOspite" => rand(1,100),
+        
     ],
 ];
 $nome = $_GET['nome'];
@@ -170,31 +152,29 @@ $db = [
     ]
 ];
 // Creare un array contenente qualche alunno di un’ipotetica classe. Ogni alunno avrà Nome, Cognome e un array contenente i suoi voti scolastici. Stampare Nome, Cognome e la media dei voti di ogni alunno.
+
 $alunni=[
     [
         'nome'=>'mario',
         'cognome'=>'rossi',
-        'voti'=>[3,6,7,6,9,5,8]
+        'voti'=>[rand(3,10),rand(3,10),rand(3,10),rand(3,10),rand(3,10),rand(3,10),rand(3,10)]
     ],
     [
         'nome'=>'matteo',
         'cognome'=>'brambilla',
-        'voti'=>[3,7,6,8,5,9,4]
+        'voti'=>[rand(3,10),rand(3,10),rand(3,10),rand(3,10),rand(3,10),rand(3,10),rand(3,10)]
     ],
     [
         'nome'=>'gennaro',
         'cognome'=>'esposito',
-        'voti'=>[3,7,6,8,5,9,2]
+        'voti'=>[rand(3,10),rand(3,10),rand(3,10),rand(3,10),rand(3,10),rand(3,10),rand(3,10)]
     ],
     [
         'nome'=>'pippo',
         'cognome'=>'baudo',
-        'voti'=>[3,2,2,8,2,3,4]
+        'voti'=>[rand(3,10),rand(3,10),rand(3,10),rand(3,10),rand(3,10),rand(3,10),rand(3,10)]
     ],
 ];
-
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -235,19 +215,19 @@ $alunni=[
         <?php for($i = 0; $i < count($giornata25); $i++){ ?>
         <li> 
             <span>
-            <?php echo "{$giornata25[$i][0]['squadraCasa']}"; ?>
+            <?php echo "{$giornata25[$i]['squadraCasa']}"; ?>
             </span>
             -
             <span>
-            <?php echo "{$giornata25[$i][1]['squadraOspite']}"; ?>
+            <?php echo "{$giornata25[$i]['squadraOspite']}"; ?>
             </span>
             |
             <span>
-            <?php echo "{$giornata25[$i][0]['puntiCasa']}"; ?>
+            <?php echo "{$giornata25[$i]['puntiCasa']}"; ?>
             </span>
             -
             <span>
-            <?php echo "{$giornata25[$i][1]['puntiOspite']}"; ?>
+            <?php echo "{$giornata25[$i]['puntiOspite']}"; ?>
             </span>
         </li>
         <?php } ?>
